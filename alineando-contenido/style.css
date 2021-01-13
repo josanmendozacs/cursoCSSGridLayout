@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  gap: 0.5rem;
+  height: 100vh;
+  grid-template-columns: repeat(3, 20rem);
+  grid-template-rows: repeat(4, 10rem);
+  /* justify-content: start end center stretch space-around space-between space-evenly; */
+  justify-content: center;
+  align-content: center;
+  /* align-content: start end center stretch; */
+  /* justify-items: center; */
+  /* align-items: center; */
+}
+
+.item {
+  background: lightblue;
+  padding: 1rem;
+  border: 0.1rem solid red;
+}
+
+.item:nth-of-type(5) {
+  /* align-self: start; */
+  /* justify-self: start; */
+}
