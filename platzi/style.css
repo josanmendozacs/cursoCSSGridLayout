@@ -1,89 +1,126 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
+  font-family: "Lato", sans-serif;
+  margin: 0;
 }
 
 .title {
-    font-size: 3.6rem;
-    font-weight: normal;
-    margin: 0;
-    display: flex;
-    align-items: center;
+  grid-area: title;
+  font-size: 3.6rem;
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .form {
-    text-align: center;
-    background-color: rgba(255, 255, 255, .9);
-    padding: 1.5em;
-    border-radius: 1rem;
+  grid-area: form;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5em;
+  border-radius: 1rem;
 }
 
 .form input {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.6rem;
-    border: .1rem solid #dbdbe2;
-    border-radius: .5rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid #dbdbe2;
+  border-radius: 0.5rem;
 }
 
 .form p {
-    font-size: 2rem;
-    color: #3a3b3f;
-    margin-bottom: 1em;
+  font-size: 2rem;
+  color: #3a3b3f;
+  margin-bottom: 1em;
 }
 
 .form button {
-    background: #98ca3f;
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: .5rem;
-    border: none;
-    font-size: 1.6rem;
-    border-bottom: .5rem solid #6d932b;
-    display: inline-block;
+  background: #98ca3f;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.6rem;
+  border-bottom: 0.5rem solid #6d932b;
+  display: inline-block;
 }
 
 .hero {
-    background-color: #23475b;
-    color: white;
-    padding: 3.2rem 1.5rem;
+  background-color: #23475b;
+  color: white;
+  padding: 3.2rem 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(auto, 102.4rem);
+  justify-content: center;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 7rem 1fr 32rem;
+  grid-template-areas:
+    "badge title form"
+    ". description form"
+    ". countdown form";
+  gap: 1rem;
+}
+
+.badge {
+  grid-area: badge;
+}
+
+.badge img {
+  max-width: 7rem;
 }
 
 .description {
-    font-size: 2rem;
+  grid-area: description;
+}
+
+.countdown {
+  grid-area: countdown;
 }
 .countdown p {
-    font-size: 2rem;
-    text-align:  center;
-    font-weight: 300;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 300;
 }
 
 .countdown span {
-    font-size: 3.3rem;
-    font-weight: ;
+  font-size: 3.3rem;
+  font-weight: ;
 }
 
 .countdown span:after {
-    content: ":";
-    display: inline-block;
-    margin: 0 .5rem
+  content: ":";
+  display: inline-block;
+  margin: 0 0.5rem;
 }
 
 .countdown span:last-child:after {
-    display: none;
+  display: none;
 }
 
 p {
-    margin: 0;
-    
+  margin: 0;
+}
+
+@media screen and (max-width: 76.8rem) {
+  .hero-container {
+    grid-template-columns: 7rem 1fr;
+    grid-template-areas:
+      "badge title"
+      "description description"
+      "form form"
+      "countdown countdown";
+  }
 }
